@@ -14,10 +14,7 @@ exports.signup = (req, res) => {
   });
 
   user.save((err, user) => {
-    if (err) {
-      res.status(500).send({ message: err });
-      return;
-    }
+    if (err) return res.status(500).send({ message: err });
 
     if (req.body.roles) {
       Role.find(
@@ -25,17 +22,11 @@ exports.signup = (req, res) => {
           name: { $in: req.body.roles },
         },
         (err, roles) => {
-          if (err) {
-            res.status(500).send({ message: err });
-            return;
-          }
+          if (err) return res.status(500).send({ message: err });
 
           user.roles = roles.map((role) => role._id);
           user.save((err) => {
-            if (err) {
-              res.status(500).send({ message: err });
-              return;
-            }
+            if (err) return res.status(500).send({ message: err });
 
             res.send({ message: "User was registered successfully!" });
           });
@@ -43,17 +34,11 @@ exports.signup = (req, res) => {
       );
     } else {
       Role.findOne({ name: "user" }, (err, role) => {
-        if (err) {
-          res.status(500).send({ message: err });
-          return;
-        }
+        if (err) return res.status(500).send({ message: err });
 
         user.roles = [role._id];
         user.save((err) => {
-          if (err) {
-            res.status(500).send({ message: err });
-            return;
-          }
+          if (err) return res.status(500).send({ message: err });
 
           res.send({ message: "User was registered successfully!" });
         });
@@ -69,8 +54,7 @@ exports.signin = (req, res) => {
     .populate("roles", "-__v")
     .exec((err, user) => {
       if (err) {
-        res.status(500).send({ message: err });
-        return;
+        return res.status(500).send({ message: err });
       }
 
       if (!user) {

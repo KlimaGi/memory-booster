@@ -1,6 +1,6 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const dbConfig = require("./config/db.config");
 
 const app = express();
 
@@ -20,13 +20,10 @@ const db = require("./models");
 const Role = db.role;
 
 db.mongoose
-  .connect(
-    `mongodb+srv://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DB}`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(`mongodb+srv://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
