@@ -1,3 +1,13 @@
 import React, { useState } from "react";
-import { Formik, Field, Form, ErrorMessage } from "formik";
-import * as Yup from "yup";
+
+const Login: React.FC = () => {
+  return (
+    <form>
+      <input id="username" placeholder="Username" />
+      <input id="email" placeholder="Email" />
+      <input id="password" placeholder="Password" />
+    </form>
+  );
+};
+
+export default Login;
