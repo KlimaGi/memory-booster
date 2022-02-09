@@ -5,19 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { UseIcon } from "../services/useIcon";
 import bigLogo from "../assets/icons/bigLogo.svg";
 
-type LoginData = {
+type SignInData = {
   username: string;
   email: string;
   password: string;
 };
 
-const Login: React.FC = () => {
+const SignIn: React.FC = () => {
   const {
     register,
     getValues,
     formState: { errors },
     handleSubmit,
-  } = useForm<LoginData>({ mode: "onBlur" });
+  } = useForm<SignInData>({ mode: "onBlur" });
 
   const [success, setSuccess] = useState<string>("");
   //const dispatch = useDispatch();
@@ -47,6 +47,14 @@ const Login: React.FC = () => {
         )}
 
         <input
+          id="email"
+          placeholder="Email"
+          {...register("email", { required: true })}
+        />
+        {errors.email && errors.email.type === "required" && (
+          <p>Email is required.</p>
+        )}
+        <input
           id="password"
           placeholder="Password"
           {...register("password", { required: true, minLength: 8 })}
@@ -63,4 +71,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default SignIn;
