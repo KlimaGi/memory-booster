@@ -28,3 +28,23 @@ export const DivButton = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
+
+export const SubmitButton = styled.button`
+  background-color: ${purplegrey};
+  color: ${light};
+  border-radius: 2px;
+  border-style: none;
+  font-size: ${fontSize};
+  font-family: ${fontFamilyZilla};
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 1.2rem 0.5rem;
+  padding: 1.3rem;
+  width: 97%;
+  :hover {
+    background-color: ${dark};
+  }
+  :focus {
+    background-color: ${dark};
+  }
+`;

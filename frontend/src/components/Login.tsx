@@ -1,9 +1,22 @@
+/** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { UseIcon } from "../services/useIcon";
 import bigLogo from "../assets/icons/bigLogo.svg";
+import { SubmitButton } from "../assets/styledComponents/Buttons";
+import {
+  BackDiv,
+  CenterDiv,
+  LogoDiv,
+} from "../assets/styledComponents/publicBack";
+import {
+  Form,
+  Input,
+  InputContainer,
+  FieldError,
+} from "../assets/styledComponents/Form";
 
 type LoginData = {
   username: string;
@@ -31,35 +44,45 @@ const Login: React.FC = () => {
   };
 
   return (
-    <>
-      <UseIcon icon={bigLogo} name="memory booster logo" />
-      <form onSubmit={handleSubmit(submitForm)}>
-        <input
-          id="username"
-          placeholder="Username"
-          {...register("username", { required: true, minLength: 3 })}
-        />
-        {errors.username && errors.username.type === "required" && (
-          <p>Username is required.</p>
-        )}
-        {errors.username && errors.username.type === "minLength" && (
-          <p>The username must be at least 3 characters.</p>
-        )}
+    <BackDiv>
+      <CenterDiv>
+        <LogoDiv>
+          <UseIcon icon={bigLogo} name="memory booster logo" />
+        </LogoDiv>
 
-        <input
-          id="password"
-          placeholder="Password"
-          {...register("password", { required: true, minLength: 8 })}
-        />
-        {errors.password && errors.password.type === "required" && (
-          <p>Password is required.</p>
-        )}
-        {errors.password && errors.password.type === "minLength" && (
-          <p>The password must be at least 8 characters.</p>
-        )}
-        <button type="submit">Submit</button>
-      </form>
-    </>
+        <Form onSubmit={handleSubmit(submitForm)}>
+          <InputContainer>
+            <Input
+              id="username"
+              placeholder="Username"
+              {...register("username", { required: true, minLength: 3 })}
+            />
+          </InputContainer>
+
+          {errors.username && errors.username.type === "required" && (
+            <FieldError>Username is required.</FieldError>
+          )}
+          {errors.username && errors.username.type === "minLength" && (
+            <FieldError>The username must be at least 3 characters.</FieldError>
+          )}
+          <InputContainer>
+            <Input
+              id="password"
+              placeholder="Password"
+              {...register("password", { required: true, minLength: 8 })}
+            />
+          </InputContainer>
+
+          {errors.password && errors.password.type === "required" && (
+            <FieldError>Password is required.</FieldError>
+          )}
+          {errors.password && errors.password.type === "minLength" && (
+            <FieldError>The password must be at least 8 characters.</FieldError>
+          )}
+          <SubmitButton type="submit">Submit</SubmitButton>
+        </Form>
+      </CenterDiv>
+    </BackDiv>
   );
 };
 

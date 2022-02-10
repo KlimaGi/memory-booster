@@ -1,5 +1,5 @@
 export const dark = "#2F3254";
-export const light = "#f3f3f3";
+export const light = "#f0f0f0";
 
 export const lightopasity = "#dbdada80";
 

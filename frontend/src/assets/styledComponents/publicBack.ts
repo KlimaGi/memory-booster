@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Center } from "../theme/base";
+import { lightopasity } from "../theme/colors";
 
 export const BackDiv = styled.div`
   background: url(images/faraway.jpg);
@@ -16,8 +17,9 @@ export const CenterDiv = styled.div`
   padding: 0;
   ${Center};
   height: 100%;
-  min-width: 35%;
+  min-width: 30%;
   border-radius: 2px;
+  background: ${lightopasity};
 `;
 
 export const LogoDiv = styled.div`
