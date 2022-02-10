@@ -4,6 +4,7 @@
 
 .App-header {
   background-color: #3b3f47;
+  color: #f3f3f3;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,7 +13,7 @@
   color: #5c7377;
   color: #959fa1;
   color: #8aadb1d7;
-  color: #dbdada;
+  color: #dbdadabb;
   background-color: #5c7377;
   color: #cf7272;
 }

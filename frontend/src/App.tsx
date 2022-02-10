@@ -7,7 +7,7 @@ import { All } from "./components/All";
 import { AdminPage } from "./components/AdminPage";
 import { UserPage } from "./components/UserPage";
 import Login from "./components/Login";
-import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 const store = {};
 
@@ -17,14 +17,14 @@ export const App = () => {
       <>
         <Global
           styles={css`
-            div {
+            body {
               ${GlobalStyle}
             }
           `}
         ></Global>
         <Routes>
           <Route path="/" element={<All />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signin" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/user" element={<UserPage />} />
