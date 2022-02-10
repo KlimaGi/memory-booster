@@ -1,30 +1,25 @@
 import styled from "@emotion/styled";
+import { Center } from "../theme/base";
 
 export const BackDiv = styled.div`
   background: url(images/faraway.jpg);
-  background-color: #0b0f27;
+  background-color: #8aadb1d7;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${Center};
 `;
 
 export const CenterDiv = styled.div`
-  height: 30%;
   margin: 0 auto;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${Center};
+  height: 100%;
   min-width: 35%;
-  border: 1px solid grey;
+  border-radius: 2px;
 `;
 
 export const LogoDiv = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
 `;

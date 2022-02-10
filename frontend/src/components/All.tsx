@@ -7,6 +7,7 @@ import {
   CenterDiv,
   LogoDiv,
 } from "../assets/styledComponents/publicBack";
+import { Button, DivButton } from "../assets/styledComponents/Buttons";
 
 export const All = () => {
   const navigate = useNavigate();
@@ -16,10 +17,10 @@ export const All = () => {
         <LogoDiv>
           <UseIcon icon={bigLogo} name="memory booster logo" />
         </LogoDiv>
-        <div>
-          <button onClick={() => navigate("login")}>Login</button>
-          <button onClick={() => navigate("signin")}>Sign In</button>
-        </div>
+        <DivButton>
+          <Button onClick={() => navigate("login")}>Log in</Button>
+          <Button onClick={() => navigate("signin")}>Sign in</Button>
+        </DivButton>
       </CenterDiv>
     </BackDiv>
   );
