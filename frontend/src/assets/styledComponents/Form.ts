@@ -7,7 +7,7 @@ import {
   bluegreyopasity,
   red,
 } from "../theme/colors";
-import { fontSize, fontFamilyZilla } from "../theme/base";
+import { fontSize, fontFamilyZilla, Center } from "../theme/base";
 
 export const Form = styled.form`
   margin: 0;
@@ -17,13 +17,13 @@ export const Form = styled.form`
 `;
 
 export const InputContainer = styled.div`
-  margin-top: 1.2rem;
-  width: 100%;
+  margin: 1rem 0.5rem;
+  border-radius: 2px;
   display: flex;
+  background-color: ${light};
 `;
 
 export const Input = styled.input`
-  border-radius: 2px;
   background-color: ${light};
   color: ${purplegrey};
   font-weight: lighter;
@@ -51,7 +51,8 @@ export const Input = styled.input`
 `;
 
 export const InputIcon = styled.i`
-  margin: 0 1rem;
+  margin: 1rem;
+  ${Center};
 `;
 
 export const FieldError = styled.div`

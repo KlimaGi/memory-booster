@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { UseIcon } from "../services/useIcon";
 import bigLogo from "../assets/icons/bigLogo.svg";
+import userIcon from "../assets/icons/userIcon.svg";
+import passwordIcon from "../assets/icons/passwordIcon.svg";
+import visibleIcon from "../assets/icons/visibleIcon.svg";
 import { SubmitButton } from "../assets/styledComponents/Buttons";
 import {
   BackDiv,
@@ -14,6 +17,7 @@ import {
 import {
   Form,
   Input,
+  InputIcon,
   InputContainer,
   FieldError,
 } from "../assets/styledComponents/Form";
@@ -52,6 +56,9 @@ const Login: React.FC = () => {
 
         <Form onSubmit={handleSubmit(submitForm)}>
           <InputContainer>
+            <InputIcon>
+              <UseIcon icon={userIcon} name="user icon" />
+            </InputIcon>
             <Input
               id="username"
               placeholder="Username"
@@ -66,11 +73,17 @@ const Login: React.FC = () => {
             <FieldError>The username must be at least 3 characters.</FieldError>
           )}
           <InputContainer>
+            <InputIcon>
+              <UseIcon icon={passwordIcon} name="password icon" />
+            </InputIcon>
             <Input
               id="password"
               placeholder="Password"
               {...register("password", { required: true, minLength: 8 })}
             />
+            <InputIcon>
+              <UseIcon icon={visibleIcon} name="unhide password" />
+            </InputIcon>
           </InputContainer>
 
           {errors.password && errors.password.type === "required" && (

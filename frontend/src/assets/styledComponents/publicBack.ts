@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { Center } from "../theme/base";
-import { lightopasity } from "../theme/colors";
+import { lightopasity, bluegrey } from "../theme/colors";
 
 export const BackDiv = styled.div`
   background: url(images/faraway.jpg);
-  background-color: #8aadb1d7;
+  background-color: ${bluegrey};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
