@@ -24,6 +24,7 @@ export const Button = styled.button`
 
 export const DivButton = styled.div`
   width: 80%;
+  padding-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

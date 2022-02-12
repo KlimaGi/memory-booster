@@ -21,7 +21,3 @@ export const CenterDiv = styled.div`
   border-radius: 2px;
   background: ${lightopasity};
 `;
-
-export const LogoDiv = styled.div`
-  margin-bottom: 1.4rem;
-`;

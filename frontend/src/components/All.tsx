@@ -2,11 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { UseIcon } from "../services/useIcon";
 import bigLogo from "../assets/icons/bigLogo.svg";
-import {
-  BackDiv,
-  CenterDiv,
-  LogoDiv,
-} from "../assets/styledComponents/publicBack";
+import { BackDiv, CenterDiv } from "../assets/styledComponents/publicBack";
 import { Button, DivButton } from "../assets/styledComponents/Buttons";
 
 export const All = () => {
@@ -14,9 +10,9 @@ export const All = () => {
   return (
     <BackDiv>
       <CenterDiv>
-        <LogoDiv>
+        <div>
           <UseIcon icon={bigLogo} name="memory booster logo" />
-        </LogoDiv>
+        </div>
         <DivButton>
           <Button onClick={() => navigate("login")}>Log in</Button>
           <Button onClick={() => navigate("signin")}>Sign in</Button>

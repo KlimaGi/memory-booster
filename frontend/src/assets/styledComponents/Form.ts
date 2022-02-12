@@ -11,13 +11,13 @@ import { fontSize, fontFamilyZilla, Center } from "../theme/base";
 
 export const Form = styled.form`
   margin: 0;
-  padding: 2rem;
-  width: 100%;
+  padding: 0;
+  min-width: 80%;
   position: relative;
 `;
 
 export const InputContainer = styled.div`
-  margin: 1rem 0.5rem;
+  margin: 1.2rem 0.5rem 0;
   border-radius: 2px;
   display: flex;
   background-color: ${light};

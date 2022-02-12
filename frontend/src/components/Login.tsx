@@ -9,11 +9,7 @@ import userIcon from "../assets/icons/userIcon.svg";
 import passwordIcon from "../assets/icons/passwordIcon.svg";
 import visibleIcon from "../assets/icons/visibleIcon.svg";
 import { SubmitButton } from "../assets/styledComponents/Buttons";
-import {
-  BackDiv,
-  CenterDiv,
-  LogoDiv,
-} from "../assets/styledComponents/publicBack";
+import { BackDiv, CenterDiv } from "../assets/styledComponents/publicBack";
 import {
   Form,
   Input,
@@ -50,9 +46,9 @@ const Login: React.FC = () => {
   return (
     <BackDiv>
       <CenterDiv>
-        <LogoDiv>
+        <div>
           <UseIcon icon={bigLogo} name="memory booster logo" />
-        </LogoDiv>
+        </div>
 
         <Form onSubmit={handleSubmit(submitForm)}>
           <InputContainer>
