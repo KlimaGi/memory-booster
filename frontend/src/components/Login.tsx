@@ -43,6 +43,9 @@ const Login: React.FC = () => {
     const passwordValue = getValues("password");
   };
 
+  const [visible, setVisible] = useState(false);
+  const pswType = visible ? "text" : "password";
+
   return (
     <BackDiv>
       <CenterDiv>
@@ -74,10 +77,14 @@ const Login: React.FC = () => {
             </InputIcon>
             <Input
               id="password"
+              type={pswType}
               placeholder="Password"
               {...register("password", { required: true, minLength: 8 })}
             />
-            <InputIcon>
+            <InputIcon
+              onMouseDown={() => setVisible(true)}
+              onMouseUp={() => setVisible(false)}
+            >
               <UseIcon icon={visibleIcon} name="unhide password" />
             </InputIcon>
           </InputContainer>

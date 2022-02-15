@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { UseIcon } from "../services/useIcon";
 import bigLogo from "../assets/icons/bigLogo.svg";
 import userIcon from "../assets/icons/userIcon.svg";
+import mailIcon from "../assets/icons/mailIcon.svg";
 import passwordIcon from "../assets/icons/passwordIcon.svg";
 import visibleIcon from "../assets/icons/visibleIcon.svg";
 import { SubmitButton } from "../assets/styledComponents/Buttons";
@@ -42,6 +43,9 @@ const SignUp: React.FC = () => {
     const passwordValue = getValues("password");
   };
 
+  const [visible, setVisible] = useState(false);
+  const pswType = visible ? "text" : "password";
+
   return (
     <BackDiv>
       <CenterDiv>
@@ -69,7 +73,7 @@ const SignUp: React.FC = () => {
           )}
           <InputContainer>
             <InputIcon>
-              <UseIcon icon={passwordIcon} name="password icon" />
+              <UseIcon icon={mailIcon} name="mail icon" />
             </InputIcon>
             <Input
               id="email"
@@ -88,10 +92,14 @@ const SignUp: React.FC = () => {
             </InputIcon>
             <Input
               id="password"
+              type={pswType}
               placeholder="Password"
               {...register("password", { required: true, minLength: 8 })}
             />
-            <InputIcon>
+            <InputIcon
+              onMouseDown={() => setVisible(true)}
+              onMouseUp={() => setVisible(false)}
+            >
               <UseIcon icon={visibleIcon} name="unhide password" />
             </InputIcon>
           </InputContainer>
