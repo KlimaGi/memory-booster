@@ -4,7 +4,7 @@ export const NoteRow = ({ note }) => {
   return (
     <tr>
       <td>
-        <span style="">{note.title}</span>
+        <span>{note.title}</span>
       </td>
       <td>{note.learningsteps}</td>
     </tr>
