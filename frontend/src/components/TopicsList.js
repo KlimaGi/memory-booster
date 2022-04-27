@@ -1,3 +1,6 @@
+import { NoteCategory } from "./NoteCategory";
+import { NoteRow } from "./NoteRow";
+
 export const TopicsList = ({ notes, searchText, isToday }) => {
   const rows = [];
   let lastCategory = null;
